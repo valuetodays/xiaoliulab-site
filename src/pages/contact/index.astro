@@ -1,5 +1,5 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'; import PageHero from '../../components/PageHero.astro';
-const contacts=[{icon:'G',title:'GitHub',desc:'查看代码与开源项目',href:'https://github.com/valuetodays'},{icon:'文',title:'文档反馈',desc:'在文档站提交问题与建议',href:'https://docs.xiaoliulab.com'},{icon:'邮',title:'电子邮件',desc:'业务交流与内容勘误',href:'mailto:hello@xiaoliulab.com'},{icon:'微',title:'微信公众号',desc:'关注小刘实验室的最新更新',href:'#'}];
+const contacts=[{icon:'G',title:'GitHub',desc:'查看代码与开源项目',href:'https://github.com/valuetodays'},{icon:'文',title:'文档反馈',desc:'在文档站提交问题与建议',href:'https://docs.xiaoliulab.com'},{icon:'微',title:'微信公众号',desc:'关注小刘实验室的最新更新',href:'#'}];
 ---
 <BaseLayout title="联系我们｜小刘实验室"><PageHero eyebrow="CONTACT" title="联系我们" description="如果你发现内容问题、有实验建议，或者只是想交流，欢迎通过下面的方式找到我们。" /><section class="section"><div class="container contact-grid">{contacts.map(c=><a class="contact-card" href={c.href}><span>{c.icon}</span><div><h2>{c.title}</h2><p>{c.desc}</p></div><i>↗</i></a>)}</div></section></BaseLayout>
