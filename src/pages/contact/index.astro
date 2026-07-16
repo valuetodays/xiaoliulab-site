@@ -1,5 +1,37 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro'; import PageHero from '../../components/PageHero.astro';
-const contacts=[{icon:'G',title:'GitHub',desc:'查看代码与开源项目',href:'https://github.com/valuetodays'},{icon:'文',title:'文档反馈',desc:'在文档站提交问题与建议',href:'https://docs.xiaoliulab.com'},{icon:'微',title:'微信公众号',desc:'关注小刘实验室的最新更新',href:'#'}];
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const contacts = [
+  { icon: 'G', title: 'GitHub', desc: '查看代码与开源项目', href: 'https://github.com/valuetodays' },
+  { icon: '文', title: '文档反馈', desc: '在文档站提交问题与建议', href: 'https://docs.xiaoliulab.com' },
+];
 ---
-<BaseLayout title="联系我们｜小刘实验室"><PageHero eyebrow="CONTACT" title="联系我们" description="如果你发现内容问题、有实验建议，或者只是想交流，欢迎通过下面的方式找到我们。" /><section class="section"><div class="container contact-grid">{contacts.map(c=><a class="contact-card" href={c.href}><span>{c.icon}</span><div><h2>{c.title}</h2><p>{c.desc}</p></div><i>↗</i></a>)}</div></section></BaseLayout>
+
+<BaseLayout title="联系我们｜小刘实验室">
+  <PageHero eyebrow="CONTACT" title="联系我们" description="如果你发现内容问题、有实验建议，或者只是想交流，欢迎通过下面的方式找到我们。" />
+  <section class="section">
+    <div class="container contact-grid">
+      {contacts.map((contact) => (
+        <a class="contact-card" href={contact.href}>
+          <span>{contact.icon}</span>
+          <div><h2>{contact.title}</h2><p>{contact.desc}</p></div>
+          <i aria-hidden="true">→</i>
+        </a>
+      ))}
+
+      <div class="contact-card wechat-card" tabindex="0">
+        <img class="wechat-qr-small" src="/images/xiaoliulab-mp-qrcode.png" alt="小刘实验室微信公众号二维码" width="430" height="430" />
+        <div>
+          <h2>微信公众号</h2>
+          <p>关注小刘实验室的最新更新</p>
+          <small>悬停二维码放大扫码</small>
+        </div>
+        <div class="wechat-qr-preview" aria-hidden="true">
+          <img src="/images/xiaoliulab-mp-qrcode.png" alt="" width="430" height="430" />
+          <span>微信扫码关注</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
