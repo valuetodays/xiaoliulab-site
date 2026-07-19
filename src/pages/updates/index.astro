@@ -1,4 +1,4 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'; import PageHero from '../../components/PageHero.astro'; import { updates } from '../../data/site';
 ---
-<BaseLayout title="最新动态｜小刘实验室"><PageHero eyebrow="CHANGELOG" title="最新动态" description="记录新实验、新文档与每一次改进。小步更新，长期积累。" /><section class="section"><div class="container timeline">{updates.map(item=><article><time><b>{item.date}</b><small>{item.year}</small></time><i></i><div><span class="status">{item.type}</span><h2>{item.title}</h2><p>{item.description}</p><a href="https://docs.xiaoliulab.com">查看相关内容 ↗</a></div></article>)}</div></section></BaseLayout>
+<BaseLayout title="最新动态｜小刘实验室"><PageHero eyebrow="CHANGELOG" title="最新动态" description="记录新实验、新文档与每一次改进。小步更新，长期积累。" /><section class="section"><div class="container timeline">{updates.map(item=><article><time><b>{item.date}</b><small>{item.year}</small></time><i></i><div><span class="status">{item.type}</span><h2>{item.title}</h2><p>{item.description}</p><a href={item.href ?? 'https://docs.xiaoliulab.com'}>查看相关内容 ↗</a></div></article>)}</div></section></BaseLayout>
